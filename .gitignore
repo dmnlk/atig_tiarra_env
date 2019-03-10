@@ -1,4 +1,6 @@
 .atig/oauth
 atig/log/*
+!atig/log/.gitkeep
 atig/tmp/*
+!atig/tmp/.gitkeep
 
