@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  atig:
+    build: .
+    container_name: atig
+    volumes:
+      - "./.atig:/root/.atig"
+      - "./atig/log:/atig/log"
+    ports:
+      - 6664:6664
