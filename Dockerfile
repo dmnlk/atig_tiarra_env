@@ -20,6 +20,8 @@ RUN apk add --no-cache ca-certificates \
     wget \
     supervisor
 
+RUN cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
 WORKDIR /
 
 RUN git clone https://github.com/atig/atig.git
