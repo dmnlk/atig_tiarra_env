@@ -17,7 +17,8 @@ RUN apk add --no-cache ca-certificates \
     ruby-dev \
     libidn \
     libidn-dev \
-    wget 
+    wget \
+    supervisor
 
 WORKDIR /
 
@@ -41,6 +42,8 @@ RUN mkdir -p $APPDIR && \
       --strip-components=1 
 COPY tiarra.conf /tiarra/
 
-WORKDIR /tiarra
+COPY supervisord.conf /etc/supervisord.conf
 EXPOSE 6664
-ENTRYPOINT ["/tiarra/tiarra", "-d"]
+
+ENTRYPOINT ["/usr/bin/supervisord"]
+#ENTRYPOINT ["/bin/bash"]
