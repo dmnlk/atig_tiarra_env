@@ -24,9 +24,8 @@ WORKDIR /
 
 RUN git clone https://github.com/atig/atig.git
 WORKDIR atig 
-RUN bundle install --path=vendor/bundle --jobs=4 --retry=3
-
-
+RUN bundle install --jobs=4 --retry=3
+RUN sed  -i -e s/::Twitter::Validation/::Twitter::TwitterText::Validation/ lib/atig/command/status.rb
 
 ENV TARBALL https://bitbucket.org/topia/tiarra/get/full-history.tar.gz
 ENV APPDIR  /tiarra
@@ -46,4 +45,3 @@ COPY supervisord.conf /etc/supervisord.conf
 EXPOSE 6664
 
 ENTRYPOINT ["/usr/bin/supervisord"]
-#ENTRYPOINT ["/bin/bash"]
