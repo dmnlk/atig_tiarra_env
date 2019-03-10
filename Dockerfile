@@ -41,5 +41,6 @@ RUN mkdir -p $APPDIR && \
       --strip-components=1 
 COPY tiarra.conf /tiarra/
 
-ENTRYPOINT ["/bin/bash"]
-#ENTRYPOINT ["/tiarra/tiarra", "-d"]
+WORKDIR /tiarra
+EXPOSE 6664
+ENTRYPOINT ["/tiarra/tiarra", "-d"]
