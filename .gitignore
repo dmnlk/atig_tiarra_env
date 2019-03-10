@@ -1,3 +1,4 @@
 .atig/oauth
 atig/log/*
+atig/tmp/*
 
