@@ -9,6 +9,7 @@ RUN apk add --no-cache ca-certificates \
     ruby \
     ruby-bundler \
     perl \
+    perl-dev \
     perl-utils \
     sqlite \
     sqlite-dev \
