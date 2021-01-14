@@ -30,7 +30,7 @@ WORKDIR atig
 RUN bundle install --jobs=4 --retry=3
 RUN sed  -i -e s/::Twitter::Validation/::Twitter::TwitterText::Validation/ lib/atig/command/status.rb
 
-ENV TARBALL https://bitbucket.org/topia/tiarra/get/full-history.tar.gz
+ENV TARBALL http://www.clovery.jp/tiarra/archive/2010/02/tiarra-20100212.tar.gz
 ENV APPDIR  /tiarra
 RUN  wget -qO- https://cpanmin.us \
     | perl - App::cpanminus \
